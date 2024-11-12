@@ -7,12 +7,8 @@ WORKDIR /app
 # Copia el archivo de la aplicación
 COPY app.rb /app/
 
-# Instala las dependencias necesarias
-RUN gem install sinatra
-RUN gem install rack
-
 # Expone el puerto que utilizará la aplicación
 EXPOSE 4567
 
-# Comando para ejecutar la aplicación con rackup
-CMD ["rackup", "--host", "0.0.0.0"]
+# Comando para ejecutar el servidor básico
+CMD ["ruby", "app.rb"]
