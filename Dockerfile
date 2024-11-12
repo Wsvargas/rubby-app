@@ -8,7 +8,7 @@ COPY app.rb /app/
 WORKDIR /app
 
 # Exponer el puerto (puedes cambiarlo según el puerto de tu aplicación)
-EXPOSE 4567
+EXPOSE 8080
 
 # Ejecuta la aplicación Ruby
 CMD ["ruby", "app.rb"]
