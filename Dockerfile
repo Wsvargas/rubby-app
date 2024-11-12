@@ -1,11 +1,20 @@
-# Usamos una imagen oficial de Ruby
-FROM ruby:3.1-slim
+# Dockerfile
+FROM ruby:latest
 
-# Establecer directorio de trabajo
+# Copia el archivo Gemfile y Gemfile.lock al contenedor
+COPY Gemfile* /app/
+
+# Define el directorio de trabajo
 WORKDIR /app
 
-# Copiar el código fuente al contenedor
-COPY app.rb .
+# Instala las dependencias del proyecto
+RUN bundle install
 
-# Comando para ejecutar el programa
+# Copia el archivo de la aplicación
+COPY app.rb /app/
+
+# Exponer el puerto 4567 para acceder al servidor
+EXPOSE 4567
+
+# Ejecutar la aplicación
 CMD ["ruby", "app.rb"]

@@ -1,2 +1,9 @@
-puts "Hello from Ruby!"
-puts "Hello from Ruby change code 10/11/2024!"
+# app.rb
+require 'sinatra'
+
+get '/' do
+  '<h1>Hello from Ruby!</h1>'
+  '<h1>Developer Name: Willian Vargas!</h1>'
+
+  
+end
