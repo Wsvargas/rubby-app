@@ -2,7 +2,8 @@
 FROM ruby:latest
 
 # Copia el archivo Gemfile y Gemfile.lock al contenedor
-COPY Gemfile* /app/
+COPY Gemfile /app/
+COPY Gemfile.lock /app/  # Este archivo puede omitirse si no existe
 
 # Define el directorio de trabajo
 WORKDIR /app
@@ -10,7 +11,7 @@ WORKDIR /app
 # Instala las dependencias del proyecto
 RUN bundle install
 
-# Copia el archivo de la aplicación
+# Copia el archivo de la aplicación después de instalar las dependencias
 COPY app.rb /app/
 
 # Exponer el puerto 4567 para acceder al servidor
