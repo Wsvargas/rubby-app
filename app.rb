@@ -8,6 +8,7 @@ server = WEBrick::HTTPServer.new :Port => 4567
 server.mount_proc '/' do |req, res|
   res.content_type = 'text/html'
   res.body = "<h1>Hello from Ruby HTTP Server!</h1>"
+  res.body = "<h1>Developer name: Willian Vargas!</h1>"
 end
 
 # Inicia el servidor
