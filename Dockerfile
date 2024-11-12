@@ -6,7 +6,6 @@ RUN gem install bundler
 
 # Copia el Gemfile al contenedor
 COPY Gemfile /app/
-COPY Gemfile.lock /app/
 
 # Define el directorio de trabajo
 WORKDIR /app
