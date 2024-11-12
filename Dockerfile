@@ -1,9 +1,8 @@
 # Dockerfile
 FROM ruby:latest
 
-# Copia el archivo Gemfile y Gemfile.lock al contenedor
+# Copia el archivo Gemfile al contenedor
 COPY Gemfile /app/
-COPY Gemfile.lock /app/  # Este archivo puede omitirse si no existe
 
 # Define el directorio de trabajo
 WORKDIR /app
