@@ -4,6 +4,9 @@ FROM ruby:latest
 # Establece el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
+# Instala webrick
+RUN gem install webrick
+
 # Copia el archivo de la aplicación
 COPY app.rb /app/
 
