@@ -1,9 +1,6 @@
+# app.rb
 require 'sinatra'
 
-# Ruta principal que devuelve un mensaje
 get '/' do
-  "Hello, World from Ruby Sinatra! <br> Name: Willian Vargas"
+  '<h1>Hello from Ruby Web App!</h1>'
 end
-
-# Inicia el servidor en el puerto 4567 (puedes cambiarlo si es necesario)
-set :port, 4567

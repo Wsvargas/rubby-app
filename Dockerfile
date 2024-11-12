@@ -1,23 +1,17 @@
-# Usa la imagen base de Ruby
+# Usa una imagen base de Ruby
 FROM ruby:latest
 
-# Instala las dependencias necesarias, incluyendo bundler
-RUN gem install bundler
-
-# Copia el Gemfile al contenedor
-COPY Gemfile /app/
-
-# Define el directorio de trabajo
+# Establecer el directorio de trabajo dentro del contenedor
 WORKDIR /app
 
-# Instala las gemas
-RUN bundle install
-
-# Copia la aplicación Ruby al contenedor
+# Copia el archivo app.rb al contenedor
 COPY app.rb /app/
 
-# Exponer el puerto (puedes cambiarlo según el puerto de tu aplicación)
+# Instala Sinatra
+RUN gem install sinatra
+
+# Expone el puerto que usarás
 EXPOSE 4567
 
-# Ejecuta la aplicación Ruby
+# Comando para ejecutar la aplicación
 CMD ["ruby", "app.rb"]
